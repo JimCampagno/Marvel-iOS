@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iWn-wW-LVh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Marvel Series Detail View Controller-->
+        <scene sceneID="cJN-cR-Jnu">
+            <objects>
+                <viewController id="6ts-QC-W66" customClass="MarvelSeriesDetailViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZbE-bC-caV"/>
+                        <viewControllerLayoutGuide type="bottom" id="JlX-sf-Qwn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vpz-e2-Idh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-nF-6l8" customClass="AvengerSeriesView" customModule="Marvel" customModuleProvider="target">
+                                <rect key="frame" x="36" y="40" width="303" height="539"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hCd-nF-6l8" secondAttribute="height" multiplier="375:667" id="acL-Tp-sG5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hCd-nF-6l8" firstAttribute="top" secondItem="ZbE-bC-caV" secondAttribute="bottom" constant="20" id="6V1-Vy-URo"/>
+                            <constraint firstItem="hCd-nF-6l8" firstAttribute="trailing" secondItem="vpz-e2-Idh" secondAttribute="trailingMargin" constant="-20" id="n9x-C9-aQH"/>
+                            <constraint firstItem="hCd-nF-6l8" firstAttribute="leading" secondItem="vpz-e2-Idh" secondAttribute="leadingMargin" constant="20" id="uzb-uJ-u6t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="marvelSeriesView" destination="hCd-nF-6l8" id="gHu-so-oiv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vc2-Gx-XqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="267"/>
+        </scene>
+        <!--Marvel Detail View Controller-->
+        <scene sceneID="6Ub-An-Hvm">
+            <objects>
+                <viewController id="5Rf-hS-IuA" customClass="MarvelDetailViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b2b-LF-c36"/>
+                        <viewControllerLayoutGuide type="bottom" id="h4O-I8-MB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Clg-zn-gRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-fN-UGp" customClass="CharacterDetailView" customModule="Marvel" customModuleProvider="target">
+                                <rect key="frame" x="38" y="60" width="300" height="466.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayO-fN-UGp" firstAttribute="centerX" secondItem="Clg-zn-gRe" secondAttribute="centerX" id="34c-GA-DKp"/>
+                            <constraint firstItem="ayO-fN-UGp" firstAttribute="height" secondItem="Clg-zn-gRe" secondAttribute="height" multiplier="0.7" id="eDH-yH-KPV"/>
+                            <constraint firstItem="ayO-fN-UGp" firstAttribute="centerY" secondItem="Clg-zn-gRe" secondAttribute="centerY" multiplier="0.88" id="j4v-FE-vNc"/>
+                            <constraint firstItem="ayO-fN-UGp" firstAttribute="width" secondItem="Clg-zn-gRe" secondAttribute="width" multiplier="0.8" id="vNc-X0-mnw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="characterDetailView" destination="ayO-fN-UGp" id="fxU-1L-Waa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfL-vU-oHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="267"/>
+        </scene>
+        <!--Marvel Collection View Controller-->
+        <scene sceneID="3Wk-Zo-xDf">
+            <objects>
+                <collectionViewController id="s6Z-eh-6aV" customClass="MarvelCollectionViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CEE-cn-5Lt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.048305697739124298" green="0.12605059146881104" blue="0.23063820600509644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E8S-27-ho0">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MarvelCell" id="A5E-Et-XlJ" customClass="MarvelCharacterCollectionViewCell" customModule="Marvel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMa-bB-odE" customClass="MarvelCharacterView" customModule="Marvel" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="uMa-bB-odE" firstAttribute="top" secondItem="A5E-Et-XlJ" secondAttribute="top" id="KdZ-7i-f7N"/>
+                                    <constraint firstItem="uMa-bB-odE" firstAttribute="leading" secondItem="A5E-Et-XlJ" secondAttribute="leading" id="VKj-lq-J7A"/>
+                                    <constraint firstAttribute="trailing" secondItem="uMa-bB-odE" secondAttribute="trailing" id="VVb-If-Ukj"/>
+                                    <constraint firstAttribute="bottom" secondItem="uMa-bB-odE" secondAttribute="bottom" id="avx-wx-v90"/>
+                                </constraints>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="marvelCharacterView" destination="uMa-bB-odE" id="Da5-B8-iXC"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="s6Z-eh-6aV" id="UeJ-lu-L9p"/>
+                            <outlet property="delegate" destination="s6Z-eh-6aV" id="thu-dy-1Pm"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="K5c-5p-gSs">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="g28-bP-YgC">
+                            <rect key="frame" x="72" y="7" width="231" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.65695784395973156" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchTextField" destination="g28-bP-YgC" id="zFl-ul-aiZ"/>
+                        <segue destination="6ts-QC-W66" kind="presentation" identifier="AvengerDetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="xue-AT-1MJ"/>
+                        <segue destination="5Rf-hS-IuA" kind="presentation" identifier="DetailSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="0f0-Sy-pL8"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXP-EL-Mez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229.5999999999999" y="-489.80509745127438"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A7o-fo-zk2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iWn-wW-LVh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="DWm-4W-KiF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s6Z-eh-6aV" kind="relationship" relationship="rootViewController" id="4bN-hI-FF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTr-fB-dkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-490"/>
+        </scene>
+    </scenes>
+</document>
