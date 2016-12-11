@@ -12,6 +12,11 @@ import RealmSwift
 
 typealias SearchResultClosure = (Bool) -> Void
 typealias ShowDetailsClosure = (MarvelCharacter) -> Void
+typealias DetailViewDismissClosure = () -> Void
+
+protocol DetailViewDismissDelegate: class {
+    func viewWillDismiss()
+}
 
 final class MarvelCollectionViewModel {
     
@@ -20,6 +25,7 @@ final class MarvelCollectionViewModel {
     let sections = 1
     let searchResult: SearchResultClosure
     let showDetails: ShowDetailsClosure
+    let detailViewDismiss: DetailViewDismissClosure
     var visibleIndexPaths: [IndexPath] = []
     let avengerSegueIdentifier = "AvengerDetailSegue"
     let detailSegueIdentifier = "DetailSegue"
@@ -33,9 +39,10 @@ final class MarvelCollectionViewModel {
         return MarvelRealmManager.shared.characters
     }
     
-    init(searchResult: @escaping SearchResultClosure, showDetails: @escaping ShowDetailsClosure) {
+    init(searchResult: @escaping SearchResultClosure, showDetails: @escaping ShowDetailsClosure, detailViewDismiss: @escaping DetailViewDismissClosure) {
         self.searchResult = searchResult
         self.showDetails = showDetails
+        self.detailViewDismiss = detailViewDismiss
     }
     
 }
@@ -66,6 +73,15 @@ extension MarvelCollectionViewModel {
     
 }
 
+// MARK: DetailViewDismiss Delegate
+extension MarvelCollectionViewModel: DetailViewDismissDelegate {
+    
+    func viewWillDismiss() {
+        detailViewDismiss()
+    }
+    
+}
+
 // MARK: - Segue Methods
 extension MarvelCollectionViewModel {
     
@@ -82,6 +98,7 @@ extension MarvelCollectionViewModel {
             
         case detailSegueIdentifier:
             let destVC = segue.destination as! MarvelDetailViewController
+            destVC.delegate = self
             destVC.marvelCharacter = chosenCharacter
 
         default:

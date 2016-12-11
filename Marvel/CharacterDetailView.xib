@@ -37,8 +37,8 @@
                         <fragment>
                             <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                             <attributes>
-                                <color key="NSColor" red="1" green="1" blue="1" alpha="0.68102453859060408" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="19" name="AvenirNext-DemiBold"/>
                             </attributes>
                         </fragment>
                     </attributedString>
@@ -59,7 +59,7 @@
                     <size key="shadowOffset" width="2" height="2"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.14507749676704407" green="0.1451098620891571" blue="0.14507544040679932" alpha="0.97999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Y4e-Jv-h6B" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-8" id="3dy-qD-ahF"/>
                 <constraint firstItem="dbT-hu-D1q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4mQ-Bt-Nhj"/>

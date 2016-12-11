@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ayO-fN-UGp" firstAttribute="centerX" secondItem="Clg-zn-gRe" secondAttribute="centerX" id="34c-GA-DKp"/>
                             <constraint firstItem="ayO-fN-UGp" firstAttribute="height" secondItem="Clg-zn-gRe" secondAttribute="height" multiplier="0.7" id="eDH-yH-KPV"/>

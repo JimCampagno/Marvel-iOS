@@ -16,6 +16,8 @@ class CharacterDetailView: UIView {
     @IBOutlet weak var marvelTextView: UITextView!
     @IBOutlet weak var marvelLogoImageView: UIImageView!
     
+   //  UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.00)
+    
     var marvelCharacter: MarvelCharacter! {
         didSet {
             basicSetup()
@@ -48,7 +50,7 @@ class CharacterDetailView: UIView {
         marvelTextView.layer.masksToBounds = true
         marvelTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
         layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 3.0
+        layer.borderWidth = 1.0
     }
     
 }
@@ -67,19 +69,19 @@ extension CharacterDetailView {
         marvelImageView.image = marvelCharacter.image
         marvelLogoImageView.image = marvelCharacter.isAvenger ? #imageLiteral(resourceName: "AvengersBlueLogo") : #imageLiteral(resourceName: "MarvelLogo")
         
-        UIView.animate(withDuration: 0.8, delay: 0.1, options: .transitionCrossDissolve, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.0, options: .transitionCrossDissolve, animations: {
             self.marvelNameLabel.alpha = 1.0
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.8, delay: 0.2, options: .transitionCrossDissolve, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.1, options: .transitionCrossDissolve, animations: {
             self.marvelImageView.alpha = 1.0
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.8, delay: 0.3, options: .transitionCrossDissolve, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.2, options: .transitionCrossDissolve, animations: {
             self.marvelLogoImageView.alpha = 1.0
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.8, delay: 0.4, options: .transitionCrossDissolve, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.3, options: .transitionCrossDissolve, animations: {
             self.marvelTextView.alpha = 1.0
         }, completion: nil)
         

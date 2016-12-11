@@ -13,18 +13,25 @@ final class MarvelCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     var backgroundImageView: UIImageView!
+    var blurView: UIVisualEffectView!
     var initialLoad: Bool = true
     
     lazy var viewModel: MarvelCollectionViewModel = { [unowned self] in
-        return MarvelCollectionViewModel(searchResult: self.searchResult, showDetails: self.showDetails)
-    }()
+    return MarvelCollectionViewModel(searchResult:  self.searchResult, showDetails:  self.showDetails, detailViewDismiss:  self.dismissOfDetailView)
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createMarvelBackground()
+        createBlurView()
         searchTextField.delegate = self
         searchTextField.becomeFirstResponder()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,11 +41,29 @@ final class MarvelCollectionViewController: UICollectionViewController {
             // TODO: Throw up loading screen
             MarvelRealmManager.shared.getAvengerSeries() { success in
                 
+                print("\n")
+                print("We have the entire Avenger Series.")
+                
             }
             
         }
         
         
+    }
+    
+    func createBlurView() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        navigationController?.view.addSubview(blurView)
+        blurView.alpha = 0.0
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        blurView.constrainEdges(to: navigationController!.view)
+    }
+    
+    func toggleBlurViewAlpha() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blurView.alpha = self.blurView.alpha < 1.0 ? 1.0 : 0.0
+        })
     }
     
     func createMarvelBackground() {
@@ -71,7 +96,12 @@ extension MarvelCollectionViewController {
     }
     
     func showDetails(forCharacter character: MarvelCharacter) {
+        toggleBlurViewAlpha()
         performSegue(withIdentifier: viewModel.detailSegueIdentifier, sender: character)
+    }
+    
+    func dismissOfDetailView() {
+        toggleBlurViewAlpha()
     }
     
 }
