@@ -17,6 +17,7 @@ enum MarvelRequest {
     case nameStartsWith(query: QueryString, ascending: Bool)
     case series(query: QueryString)
     case seriesCharacters(series: Int, limit: Int, offset: Int)
+    case comics(id: String)
     
     var url: URL? {
         switch self {
@@ -32,6 +33,9 @@ enum MarvelRequest {
             
         case let .seriesCharacters(series, limit, offset):
             return generateURL(withParameter: "series/\(series)/characters?limit=\(limit)&offset=\(offset)")
+            
+        case let .comics(id):
+            return generateURL(withParameter: "characters/\(id)/comics?")
 
         }
     }

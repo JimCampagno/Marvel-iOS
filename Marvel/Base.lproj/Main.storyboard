@@ -84,7 +84,7 @@
         <scene sceneID="3Wk-Zo-xDf">
             <objects>
                 <collectionViewController id="s6Z-eh-6aV" customClass="MarvelCollectionViewController" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CEE-cn-5Lt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="CEE-cn-5Lt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.048305697739124298" green="0.12605059146881104" blue="0.23063820600509644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

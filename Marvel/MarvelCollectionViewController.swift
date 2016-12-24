@@ -36,6 +36,14 @@ final class MarvelCollectionViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let request = MarvelRequest.comics(id: "1009157")
+        
+        MarvelAPIManager.shared.get(request: request, handler: { success, json in
+            
+            print(json ?? "Nothing")
+            
+        })
+        
         if MarvelRealmManager.shared.allCharacters.isEmpty {
             
             // TODO: Throw up loading screen
