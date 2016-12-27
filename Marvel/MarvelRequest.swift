@@ -35,8 +35,8 @@ enum MarvelRequest {
             return generateURL(withParameter: "series/\(series)/characters?limit=\(limit)&offset=\(offset)")
             
         case let .comics(id):
-            return generateURL(withParameter: "characters/\(id)/comics?")
-
+            return generateURL(withParameter: "characters/\(id)/limit=5&comics?")
+            
         }
     }
     
